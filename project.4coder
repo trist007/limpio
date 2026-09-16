@@ -1,0 +1,67 @@
+version(2);
+project_name = "limpio";
+
+patterns = {
+    "*.c",
+    "*.cpp",
+    "*.ds",
+    "*.h",
+    "*.bat",
+    "*.sh",
+    "*.4coder",
+};
+blacklist_patterns = {
+    ".*",
+};
+
+load_paths = {
+    .win = {
+        { .path = ".", .recursive = true, .relative = true, },
+    },
+    .lin = {
+        { .path = ".", .recursive = true, .relative = true, },
+    },
+};
+
+commands = {
+    .build = {
+        .win = "C:\dev\limpio\limpio\code\build.bat",
+        .lin = "/home/trist007/dev/limpio/limpio/code/build.sh",
+        .out = "*run*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = true,
+     },
+     .run = {
+        .win = "C:\dev\limpio\limpio\code\run.bat",
+        .lin = "/home/trist007/dev/limpio-vulkan/limpio/code/run.sh",
+        .out = "*run*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = true,
+    },
+    .debug = {
+        .win = "C:\dev\limpio\limpio\code\debug.bat",
+        .lin = "/home/trist007/dev/limpio/limpio/code/debug.bat",
+        .out = "*debug*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = false,
+    },
+    .clean = {
+        .win = "C:\dev\limpio\limpio\code\clean.bat",
+        .lin = "/home/trist007/dev/limpio/limpio/code/clean.sh",
+        .out = "*run*",
+        .footer_panel = true,
+        .save_dirty_files = true,
+        .cursor_at_end = true,
+    },
+};
+
+fkey_command = {
+    .F1 = "clean",
+    .F2 = "run",
+    .F3 = "debug",
+    .F4 = "build",
+};
+
