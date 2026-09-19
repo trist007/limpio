@@ -1,0 +1,18 @@
+CompileFlags:
+  Compiler: cl
+  Add:
+    - -fms-extensions
+    - -fms-compatibility
+    - -fdelayed-template-parsing
+    - -IC:\dev\limpio\limpio\code\.
+    - -Wno-error                      # cancels -WX where warnings are errors
+---
+If:
+  PathMatch: .*\.(c|h)$
+CompileFlags:
+  Add: /TC
+---
+If:
+  PathMatch: .*\.(cpp|cc|cxx)$
+CompileFlags:
+  Add: /TP
