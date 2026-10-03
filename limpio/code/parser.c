@@ -67,6 +67,13 @@ fix_spacing(char* src, char* dst)
       src += 4;
       prev = '(';
     }
+    else if (boundary && strncmp(src, "if(", 3) == 0)
+    {
+      memcpy(dst, "if (", 4);
+      dst += 4;
+      src += 3;
+      prev = '(';
+    }
     else
     {
       prev = *src;
